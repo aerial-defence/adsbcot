@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """ADSBCOT Setup.
-Source:: https://github.com/aerial-defence/adsbcot
+Source:: https://github.com/ampledata/adsbcot
 """
 
 import os
@@ -33,7 +33,7 @@ setuptools.setup(
     name=__title__,
     packages=[__title__],
     package_dir={__title__: __title__},
-    url=f"https://github.com/aerial-defence/{__title__}",
+    url=f"https://github.com/ampledata/{__title__}",
     description="ADS-B to Cursor-On-Target Gateway.",
     author="Greg Albrecht",
     author_email="oss@undef.net",
