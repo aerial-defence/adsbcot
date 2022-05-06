@@ -84,14 +84,14 @@ Connect to dump1090's Beast TCP running on host 172.17.2.122, port 30005 &
 forward CoT to host 172.17.2.152, port 8087 use following config.ini::
 
     [adsbcot]
-    COT_URL = 172.17.2.152:8087
+    COT_URL = tcp:172.17.2.152:8087
     DUMP1090_URL = tcp+beast://172.17.2.122:30005
 
 Connect to dump1090's Raw TCP running on host 172.17.2.122, port 30002 &
 forward CoT to host 172.17.2.152, port 8087::
 
     [adsbcot]
-    COT_URL = 172.17.2.152:8087
+    COT_URL = tcp:172.17.2.152:8087
     DUMP1090_URL = tcp+raw://172.17.2.122:30002
 
 
@@ -99,8 +99,8 @@ Poll dump1090's JSON API at http://172.17.2.122:8080/data/aircraft.json with a
 10 second interval & forward CoT to host 172.17.2.152, port 8087::
 
     [adsbcot]
-    COT_URL = 172.17.2.152:8087
-    DUMP1090_URL = thttp://172.17.2.122:8080/data/aircraft.json
+    COT_URL = tcp:172.17.2.152:8087
+    DUMP1090_URL = http://172.17.2.122:8080/data/aircraft.json
     POLL_INTERVAL = 10
 
 
