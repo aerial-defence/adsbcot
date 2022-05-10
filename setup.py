@@ -42,7 +42,8 @@ setuptools.setup(
     long_description=open("README.rst").read(),
     zip_safe=False,
     include_package_data=True,
-    install_requires=["aircot", "pytak >= 3.1.0", "aiohttp"],
+"""    install_requires=["aircot", "pytak >= 3.1.0", "aiohttp"],"""
+    install_requires=["aiohttp"],
     extras_require={"with_pymodes": "pymodes==2.8"},
     classifiers=[
         "Programming Language :: Python",
