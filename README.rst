@@ -90,6 +90,8 @@ forward CoT to host 172.17.2.152, port 8087 use following config.ini::
 Connect to dump1090's Raw TCP running on host 172.17.2.122, port 30002 &
 forward CoT to host 172.17.2.152, port 8087::
 
+Please specify a protocol in your CoT Destination URL, for example: tcp:xxx:9876, tls:xxx:1234, udp:xxx:9999 etc
+
     [adsbcot]
     COT_URL = tcp:172.17.2.152:8087
     DUMP1090_URL = tcp+raw://172.17.2.122:30002
