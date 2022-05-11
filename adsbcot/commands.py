@@ -109,11 +109,8 @@ def cli() -> None:
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "-c", "--CONFIG_FILE", dest="CONFIG_FILE", default="config.ini", type=str
-    )
-    parser.add_argument(
         '-U', '--cot_url', help='URL to CoT Destination.',
-        required=False
+        required=True
     )
     parser.add_argument(
         '-S', '--cot_stale', help='CoT Stale period, in seconds',
@@ -121,7 +118,7 @@ def cli() -> None:
     )
     parser.add_argument(
         '-D', '--dump1090_url', help='URL to dump1090 JSON API.',
-        required=False
+        required=True
     )
 
     namespace = parser.parse_args()
