@@ -91,7 +91,7 @@ async def main(  # pylint: disable=too-many-locals
             filters=opts.get("FILTERS"),
         )
 
-    await tx_queue.put(pytak.hello_event(f"adsbxcot@{platform.node()}"))
+    await tx_queue.put(pytak.hello_event(f"adsbcot@{platform.node()}"))
 
     tasks.add(asyncio.ensure_future(message_worker.run()))
     tasks.add(asyncio.ensure_future(read_worker.run()))
