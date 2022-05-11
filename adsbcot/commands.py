@@ -108,11 +108,29 @@ def cli() -> None:
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument(
+    """parser.add_argument(
         "-c", "--CONFIG_FILE", dest="CONFIG_FILE", default="config.ini", type=str
+    )"""
+    
+    parser.add_argument(
+        '-U', '--cot_url', help='URL to CoT Destination.',
+    )
+
+    parser.add_argument(
+        '-S', '--cot_stale', help='CoT Stale period, in seconds',
+        default=adsbcot.DEFAULT_COT_STALE
+    )
+    
+    parser.add_argument(
+        '-D', '--dump1090_url', help='URL to dump1090 JSON API.',
+    )
+
+    parser.add_argument(
+        '-I', '--poll_interval', help='For HTTP: Polling Interval',
     )
 
     namespace = parser.parse_args()
+    
     cli_args = {k: v for k, v in vars(namespace).items() if v is not None}
 
     # Read config file:
