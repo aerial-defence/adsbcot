@@ -123,30 +123,30 @@ def cli() -> None:
 
     namespace = parser.parse_args()
     
-    cli_args = {k: v for k, v in vars(namespace).items() if v is not None}
+#    cli_args = {k: v for k, v in vars(namespace).items() if v is not None}
 
     # Read config file:
-    config_file = cli_args.get("CONFIG_FILE")
-    logging.info("Reading configuration from %s", config_file)
-    config = configparser.ConfigParser()
-    config.read(config_file)
+#    config_file = cli_args.get("CONFIG_FILE")
+#    logging.info("Reading configuration from %s", config_file)
+#    config = configparser.ConfigParser()
+#    config.read(config_file)
 
     # Combined command-line args with config file:
-    combined_config = collections.ChainMap(cli_args, os.environ, config["adsbcot"])
+#    combined_config = collections.ChainMap(cli_args, os.environ, config["adsbcot"])
 
-    if combined_config.get("FILTER_CONFIG"):
-        filter_config = combined_config.get("FILTER_CONFIG")
-        logging.info("Reading FILTER_CONFIG from %s", filter_config)
-        filters = configparser.ConfigParser()
-        filters.read(filter_config)
-        combined_config = collections.ChainMap(combined_config, {"FILTERS": filters})
+#    if combined_config.get("FILTER_CONFIG"):
+#        filter_config = combined_config.get("FILTER_CONFIG")
+#        logging.info("Reading FILTER_CONFIG from %s", filter_config)
+#        filters = configparser.ConfigParser()
+#        filters.read(filter_config)
+#        combined_config = collections.ChainMap(combined_config, {"FILTERS": filters})
 
     if sys.version_info[:2] >= (3, 7):
-        asyncio.run(main(combined_config), debug=os.getenv("DEBUG"))
+        asyncio.run(main(namespace), debug=os.getenv("DEBUG"))
     else:
         loop = get_running_loop()
         try:
-            loop.run_until_complete(main(combined_config))
+            loop.run_until_complete(main(namespace))
         finally:
             loop.close()
 
