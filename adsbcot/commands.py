@@ -118,7 +118,7 @@ def cli() -> None:
     # Read config file:
     config_file = cli_args.get("CONFIG_FILE")
     logging.info("Reading configuration from %s", config_file)
-    config = configparser.ConfigParser()
+    config = configparser.ConfigParser(os.environ)
     config.read(config_file)
 
     # Combined command-line args with config file:
